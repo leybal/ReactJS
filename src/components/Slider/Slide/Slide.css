@@ -1,0 +1,21 @@
+.slider ul li {
+    position: relative;
+    width: 500px;
+    height: 300px;
+    display: inline-block
+}
+
+.slider ul li img {
+    height: 100%;
+    width: 100%;
+}
+
+.slider ul li .description {
+    position: absolute;
+    left: 50%;
+    bottom: 10px;
+    padding: 5px 15px;
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #fff;
+}

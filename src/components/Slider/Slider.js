@@ -7,6 +7,8 @@ export default class Slider extends Component {
   constructor(props) {
     super(props);
 
+    this.intervalId = 0;
+
     this.state = {
       currentSlide: 0
     }
@@ -14,12 +16,12 @@ export default class Slider extends Component {
 
 
   componentDidMount() {
-    setInterval(() => {
-        this.setState({
-            currentSlide: this.state.currentSlide + 1
-        }, () => {
-          this.setCurrentSlide(this.state.currentSlide)
-        })
+    this.intervalId = setInterval(() => {
+      this.setState({
+        currentSlide: this.state.currentSlide + 1
+      }, () => {
+        this.setCurrentSlide(this.state.currentSlide)
+      })
     }, this.props.spead)
   }
 
@@ -45,10 +47,14 @@ export default class Slider extends Component {
 
 
   slideRight = () => {
-      const { currentSlide } = this.state;
+    const { currentSlide } = this.state;
 
-      this.setCurrentSlide(currentSlide + 1)
+    this.setCurrentSlide(currentSlide + 1)
   };
+
+  componentWillUnMount() {
+    clearInterval(this.intervalId);
+  }
 
 
   render() {

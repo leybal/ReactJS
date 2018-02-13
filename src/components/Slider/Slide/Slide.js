@@ -7,9 +7,9 @@ export default class Slide extends Component {
     const { url, desc, currentSlide, i } = this.props;
     let liStyle;
     if (currentSlide === i) {
-        liStyle = { display: "inline-block"};
+      liStyle = { display: "inline-block"};
     } else {
-        liStyle = { display: "none"};
+      liStyle = { display: "none"};
     }
     return (
       <li style={liStyle}>

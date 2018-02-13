@@ -1,0 +1,10 @@
+.posts ul {
+    display: flex;
+    flex-direction: column;
+    margin: 1rem 0;
+    padding: 0;
+}
+.posts li {
+    list-style: none;
+    margin: 0.1rem 1rem;
+}

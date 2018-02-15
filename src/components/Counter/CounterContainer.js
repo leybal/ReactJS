@@ -1,4 +1,5 @@
 import { connect } from 'react-redux'
+import { bindActionCreators } from 'redux'
 import { decrement, increment } from '../../actions/counter'
 import CounterComponent from './CounterComponent'
 
@@ -11,12 +12,8 @@ const mapStateToProps = (state, ownProps) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    incrementCount: () => {
-      dispatch(increment())
-    },
-    decrementCount: () => {
-      dispatch(decrement())
-    }
+    incrementCount: bindActionCreators(increment, dispatch),
+    decrementCount: bindActionCreators(decrement, dispatch)
   }
 };
 

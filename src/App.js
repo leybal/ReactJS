@@ -5,6 +5,7 @@ import './App.css';
 import Home from "./components/Home/Home";
 import Posts from "./components/Posts/Posts";
 import Post from "./components/Post/Post";
+import Counter from "./components/Counter/CounterContainer";
 
 
 class App extends Component {
@@ -21,6 +22,8 @@ class App extends Component {
             </li>
           </ul>
         </nav>
+
+        <Counter title='redux test' />
 
         <Switch>
           <Route exact path='/' component={Home}/>
